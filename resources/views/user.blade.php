@@ -7,7 +7,7 @@
         <div class="row sameheight-container">
             <div class="col-xl-12">
                 <div class="card sameheight-item items" data-exclude="xs,sm,lg">
-                    <form action="" method="post">
+                    <form action="" method="get">
                         <div class="card-header bordered">
                             <div class="header-block">
                                 <h3 class="title"> Danh sách thành viên </h3>
@@ -73,7 +73,7 @@
                                     {{ $row->id_number }}
                                 </div>
                                 <div class="item-col ">
-                                    <a href="#" class="btn btn-danger-outline">Xoá</a>
+                                <a onclick="return del('{{$row->full}}')" href="userss/del/{{$row->id}}" class="btn btn-danger-outline">Xoá</a>
                                 </div>
                             </div>
                         </li>
@@ -94,7 +94,7 @@
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item"><a class="page-link" href="#">></a></li> --}}
-                    {{ $users->links()}}
+                    {{ $users->appends(["search"=>request()->search])->links()}}
                 </ul>
             </nav>
         </div>
@@ -105,5 +105,10 @@
 @endsection
 @section('script')
 @parent
+<script>
+    function del(name){
+        return confirm('bạn muốn xóa '+name+' ?');
+    }
+</script>
 @endsection
 

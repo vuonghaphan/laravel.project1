@@ -26,5 +26,7 @@ Route::group(['prefix' => 'userss'
 
     Route::get('adds','UserssController@getAdds_User');
     Route::post('adds','UserssController@postAdds_User');
+
+    Route::get('del/{id}','UserssController@delUserss');
 });
 

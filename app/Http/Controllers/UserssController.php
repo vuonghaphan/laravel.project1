@@ -9,10 +9,22 @@ use App\Http\Requests\EditsUserRequest;
 
 class UserssController extends Controller
 {   // user
-    public function getUser(){
+    public function getUser(Request $r){
+
+        if ($r->search != '') {
+            $data['users'] = Userss::WHERE('full','like','%'.$r->search.'%')->orderBy('id','desc')->paginate(10);
+            return view('user',$data);
+        }else{
         $data['users'] = Userss::orderBy('id','desc')->paginate(10);
         return view('user',$data);
-    }//end user
+        }
+    }
+
+    public function delUserss($id){
+        Userss::find($id)->delete();
+        return redirect('userss');
+    }
+    //end user
 
     // eddit
     public function getEdits_User($id){

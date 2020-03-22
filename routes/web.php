@@ -29,4 +29,17 @@ Route::group(['prefix' => 'userss'
 
     Route::get('del/{id}','UserssController@delUserss');
 });
+Route::get('login', 'LoginController@getLogin');
+Route::post('login', 'LoginController@postLogin');
+Route::get('convPas', function () {
+    $user = App\User::all();
+    foreach ($user as $us ) {
+        $u = App\User::find($us->id);
+        $u->password = bcrypt('1');
+        $u->save();
+    }
+});
+
+
+
 

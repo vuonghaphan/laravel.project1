@@ -60,11 +60,11 @@
                             <div class="item-row">
                                 <div class="item-col">
                                 <a href="userss/edits/{{$row->id}}">
-                                        {{ $row->full }}
+                                    {{ $row->email }}
                                     </a>
                                 </div>
                                 <div class="item-col">
-                                    {{ $row->phone }}
+                                    {{ $row->password }}
                                 </div>
                                 <div class="item-col">
                                     <span title="Dũng Tiến-Thường tín-Hà Nội">{{ $row->address }}</span>

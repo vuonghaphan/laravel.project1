@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Userss extends Model
 {
-    protected $table = 'users'; // liên kết đến bảng user trong db
+    protected $table = 'user'; // liên kết đến bảng user trong db
 }

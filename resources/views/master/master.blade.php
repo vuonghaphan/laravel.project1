@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Thư viện vedor -->
     <base href="/">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/vendor.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!-- Theme khởi tạo -->
     <script>
         var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem(

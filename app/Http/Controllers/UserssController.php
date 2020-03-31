@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Userss;
+use App\User;
 use App\Http\Requests\AddsUserRequest;
 use App\Http\Requests\EditsUserRequest;
 
@@ -12,10 +12,10 @@ class UserssController extends Controller
     public function getUser(Request $r){
 
         if ($r->search != '') {
-            $data['users'] = Userss::WHERE('full','like','%'.$r->search.'%')->orderBy('id','desc')->paginate(10);
+            $data['users'] = User::WHERE('email','like','%'.$r->search.'%')->orderBy('id','desc')->paginate(10);
             return view('user',$data);
         }else{
-        $data['users'] = Userss::orderBy('id','desc')->paginate(10);
+        $data['users'] = User::orderBy('id','desc')->paginate(10);
         return view('user',$data);
         }
     }
